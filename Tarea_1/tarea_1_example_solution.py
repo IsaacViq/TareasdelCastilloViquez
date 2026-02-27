@@ -40,6 +40,15 @@ def encontrar_extremos(lista_numeros):
     return exito, minimo, maximo
 
 #Metodo de Filtrado de Vocales
+# Codigos de retorno esperados
+# Caso de éxito => 0
+
+# Errores esperados metodo filtrar_vocales
+# Error en caso de que cadena no sea un string => -100
+# Error en caso de que cadena posea algo distinto a letras del abecedario => -200
+# Error en caso de que cadena sea un string vacío => -300
+# Error en caso de que cadena sea mayor a 30 caracteres => -400
+# Error en caso de que bandera no sea un booleano => -500
 def filtrar_vocales(cadena, bandera):
     # Validación de la cadena
     if not isinstance(cadena, str):  # Verifica si cadena es un string
