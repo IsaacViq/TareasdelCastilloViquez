@@ -38,3 +38,26 @@ def encontrar_extremos(lista_numeros):
     # Devuelve el código de éxito y los valores mínimo y máximo en caso de que
     # no se cumpla ninguna condición de falla.
     return exito, minimo, maximo
+
+#Metodo de Filtrado de Vocales
+def filtrar_vocales(cadena, bandera):
+    # Validación de la cadena
+    if not isinstance(cadena, str):  # Verifica si cadena es un string
+        return -100, None
+    if not cadena.isalpha():  # Verifica si la cadena contiene solo letras
+        return -200, None
+    if len(cadena) == 0:  # Verifica si la cadena está vacía
+        return -300, None
+    if len(cadena) > 30:  # Verifica si la cadena tiene más de 30 caracteres
+        return -400, None
+    if not isinstance(bandera, bool):  # Verifica si la bandera es un booleano
+        return -500, None
+
+    # Filtrado de vocales o consonantes según el valor de 'bandera'
+    vocales = "aeiouAEIOU"
+    if bandera:  # Si la bandera es True, extrae solo las vocales
+        resultado = ''.join([char for char in cadena if char in vocales])
+    else:  # Si la bandera es False, extrae solo las consonantes
+        resultado = ''.join([char for char in cadena if char not in vocales])
+
+    return 0, resultado  # Retorna 0 en caso de éxito junto con el resultado filtrado
